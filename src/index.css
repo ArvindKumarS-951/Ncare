@@ -1,0 +1,141 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Base colors */
+    --background: 210 33% 99%;
+    --foreground: 210 20% 23%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 20% 23%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 20% 23%;
+
+    /* Primary color - soft blue */
+    --primary: 200 64% 66%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary color - very light blue */
+    --secondary: 200 33% 96%;
+    --secondary-foreground: 200 64% 36%;
+
+    /* Muted color */
+    --muted: 210 20% 94%;
+    --muted-foreground: 210 12% 43%;
+
+    /* Accent color - soft green */
+    --accent: 150 38% 76%;
+    --accent-foreground: 150 38% 26%;
+
+    /* Destructive color */
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders, input, ring colors */
+    --border: 210 20% 88%;
+    --input: 210 20% 88%;
+    --ring: 200 64% 66%;
+
+    --radius: 1rem;
+
+    /* Sidebar colors */
+    --sidebar-background: 200 33% 96%;
+    --sidebar-foreground: 210 20% 23%;
+    --sidebar-primary: 200 64% 66%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 200 33% 90%;
+    --sidebar-accent-foreground: 200 64% 36%;
+    --sidebar-border: 200 33% 88%;
+    --sidebar-ring: 200 64% 66%;
+  }
+
+  .dark {
+    --background: 210 20% 12%;
+    --foreground: 210 5% 90%;
+
+    --card: 210 20% 14%;
+    --card-foreground: 210 5% 90%;
+
+    --popover: 210 20% 14%;
+    --popover-foreground: 210 5% 90%;
+
+    /* Primary color - soft blue for dark mode */
+    --primary: 200 64% 46%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary color - dark blue */
+    --secondary: 200 33% 20%;
+    --secondary-foreground: 200 64% 86%;
+
+    /* Muted color */
+    --muted: 210 20% 20%;
+    --muted-foreground: 210 12% 70%;
+
+    /* Accent color - soft green for dark mode */
+    --accent: 150 38% 30%;
+    --accent-foreground: 150 38% 86%;
+
+    /* Destructive color */
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders, input, ring colors */
+    --border: 210 20% 22%;
+    --input: 210 20% 22%;
+    --ring: 200 64% 46%;
+
+    /* Sidebar colors */
+    --sidebar-background: 210 20% 14%;
+    --sidebar-foreground: 210 5% 90%;
+    --sidebar-primary: 200 64% 46%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 200 33% 20%;
+    --sidebar-accent-foreground: 200 64% 86%;
+    --sidebar-border: 210 20% 22%;
+    --sidebar-ring: 200 64% 46%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    @apply text-base md:text-lg;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  /* Larger base font size for better readability */
+  p, span, div, li {
+    @apply text-base md:text-lg;
+  }
+  /* Larger buttons for better touch targets */
+  button, a.btn {
+    @apply min-h-[48px] px-4;
+  }
+  /* Elderly-friendly form elements */
+  input, select, textarea {
+    @apply text-base md:text-lg;
+  }
+}
+
+/* Add custom components */
+@layer components {
+  .nura-container {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  
+  .feature-card {
+    @apply flex flex-col items-center justify-center p-6 rounded-xl bg-white shadow-md hover:shadow-lg transition-all duration-200;
+  }
+
+  .feature-icon {
+    @apply w-12 h-12 mb-4 text-nura-blue;
+  }
+}
